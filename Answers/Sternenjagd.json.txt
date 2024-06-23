@@ -1,0 +1,68 @@
+In the Scratch program contained in the file "Sternenjagd.json," a test labeled `star touching fish` failed due to a logical issue in the scripting.
+
+Here’s a step-by-step explanation of why the test might have failed:
+
+1. **Initialization of Variables**:
+    - Variables such as `startX`, `startY`, and `Punkte` are being set initially  .
+    - The script attempts to set these variables based on the position of the `Stern` (star) sprite:
+      ```json
+      "kx}(2h6{U|MQ99|*B#k@": {
+          "opcode": "data_setvariableto",
+          "next": "$UQvq1,B(J9p`F/Y}!m",
+          "parent": "R:q0Rb]3KiKF)RSTlI14",
+          "inputs": {
+              "VALUE": [3, "](R/}A)Bx}#q~aSTqR9q", [10, "0"]]
+          },
+          "fields": {
+              "VARIABLE": ["startX", "DXM6|:stT_tuC.b~[9i^"]
+          },
+          "shadow": false
+      }
+      ```
+
+2. **Verification Logic**:
+    - The verification checks whether the sprite's `x` position equals `50` and `y` position equals `50`:
+      ```json
+      "y^]C)5Ra#Aj/kg(O-/R+": {
+          "opcode": "operator_equals",
+          "next": null,
+          "parent": "Da6082:zbWtb-%[pfJ$=",
+          "inputs": {
+              "OPERAND1": [3, [12, "startX", "DXM6|:stT_tuC.b~[9i^"], [10, ""]],
+              "OPERAND2": [3, "n!Js}LsBEmY{(Ab*yM0?", [10, "50"]]
+          }
+      },
+      "2YST(4Ulk@S/c(+E2IoJ": {
+          "opcode": "operator_equals",
+          "next": null,
+          "parent": "S:Nl!D*G99?74fg?UKE:",
+          "inputs": {
+              "OPERAND1": [3, [12, "startY", "V*[VamHdzh27Esnz8Qby"], [10, ""]],
+              "OPERAND2": [3, "ZwGF(U-dh,e4gPG/NRET", [10, "50"]]
+          }
+      }
+      ```
+
+3. **Assertion Failure**:
+    - This part checks whether the coordinates match those specified:
+      ```json
+      "Da6082:zbWtb-%[pfJ$=": {
+          "opcode": "operator_not",
+          "next": null,
+          "parent": "}v[Dgm5[;5?r0Ev8-3Tg",
+          "inputs": {
+              "OPERAND": [2, "y^]C)5Ra#Aj/kg(O-/R+"]
+          }
+      },
+      ```
+
+Given these conditions, the test likely failed because either the initial positions of the `Stern` sprite were not set correctly or the sprite didn't move to the required position due to a programming error or timing issue  . The program expects the `Stern` to be at coordinates `(50, 50)` for the test to pass.
+
+For a beginner:
+- The `Stern` (star sprite) should be correctly positioned at (50, 50).
+- Ensure the correct implementation of the script so that the `Stern` moves to or is initialized at the right position. If the positions don’t match the expected values, the condition fails.
+
+You can fix it by verifying:
+1. The `Stern` sprite's initial position.
+2. All scripts that might move the sprite around during the test execution.
+3. The logic handling coordinates should match the test conditions  .

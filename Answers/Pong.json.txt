@@ -1,0 +1,24 @@
+To understand why the test failed in the Scratch program, let's simplify the explanation for a new Scratch learner:
+
+1. **Understanding the Test and Program Flow**:
+   - In the provided Scratch program, there are different blocks representing various actions for a sprite (e.g., when Green Flag is clicked, setting variables, performing checks).
+   - Specifically, there are blocks that check conditions and set a "Status" variable based on these checks. For example, if "Meine Punkte" (My Points) is greater than 1, it sets the "Status" to "Experte" (Expert) and if not, it sets the "Status" to "Anfänger" (Beginner).
+
+2. **What the Test is Doing**:
+   - There is a test named "beginner after lower than 2" that checks if the "Status" variable is set correctly based on a condition.
+
+3. **Steps in the Test**:
+   - The test starts when the Green Flag is clicked.
+   - It sets the variable "Meine Punkte" to 2.
+   - Then, it asserts (checks) if the "Status" variable equals "Experte."
+   - Subsequently, it decreases "Meine Punkte" by 1.
+   - Finally, it asserts if the "Status" variable equals "Anfänger."
+
+4. **Why the Test Fails**:
+   - In the test, after setting "Meine Punkte" to 2, the "Status" variable was expected to be set to "Experte."
+   - However, there might be an issue in the condition check or the setting of the "Status" variable.
+   - One potential issue is the assertion that checks if the "Status" is "ABC" instead of the correct status like "Experte" or "Anfänger".
+   - Here the assert statement checks something unrealistic ("Status" equal to "ABC") which will definitely fail as "Status" was never set to "ABC".
+
+**Simplified Explanation for New Learners**:
+The test fails because it tries to check if the "Status" variable is set to an incorrect value that was never assigned in the program. The test should be checking for "Experte" or "Anfänger" based on the program logic, but it mistakenly checks for "ABC", causing the test to fail      .

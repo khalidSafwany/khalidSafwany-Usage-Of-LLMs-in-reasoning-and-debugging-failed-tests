@@ -1,0 +1,30 @@
+To understand why the tests fail in your Scratch program, let's look at some common reasons and examples:
+
+1. **Incorrect Event Triggers**: The code might not be starting at the correct event. For example, if an action is triggered incorrectly when a sprite is clicked or a key is pressed, the sequence of actions may fail.
+
+2. **Wrong Conditions**: If the conditional statements (like `if` or `repeat until`) are not set up correctly, they might not execute as expected. For instance, an error in detecting whether a sprite is touching another object, depending on the condition used.
+
+3. **Logical Errors in Operations**: Using operators the wrong way, such as greater than (`>`) or less than (`<`) comparisons, could be a problem. If these operators are used incorrectly with variables and positions, the desired action may not occur.
+
+4. **Variables and Broadcasts**: Incorrect use of variables, like not initializing variables properly, or sending and receiving broadcasts at inappropriate times.
+
+### Example Debug
+In one part of the code (based on the JSON snippets provided):
+- An `if` condition checks if the `x position` of a sprite is greater than a certain value. If the logic in `operator_gt` isn't set correctly, it won't trigger actions when it should.
+
+Another example:
+- Using `sensing_touchingobjectmenu` to detect collisions. If the object menu for detecting the collision isn't set correctly to the sprite you are checking for, the condition will never be true.
+
+### Specific Example:
+In the JSON snippets:
+```json
+";AvKRiGUnq7rn0j;B7zN":{"opcode":"sensing_touchingobject","next":null,"parent":"9so$u;M]{kpG%W#}4Og{","inputs":{"TOUCHINGOBJECTMENU":[1,"/_Zn0AKyI;j(1n)l!/Fi"]},"fields":{},"shadow":false,"breakpoint":false,"topLevel":false},"/_Zn0AKyI;j(1n)l!/Fi":{"opcode":"sensing_touchingobjectmenu","next":null,"parent":";AvKRiGUnq7rn0j;B7zN","inputs":{},"fields":{"TOUCHINGOBJECTMENU":["Kaktus",null]},"shadow":true,"breakpoint":false,"topLevel":false},
+```
+This part indicates that the code checks if a sprite is touching the 'Kaktus'. If the sprite isn't actually touching or the name of the `Kaktus` object is wrong or misspelled, this condition will always resolve to false, causing any dependent action to fail.
+
+For a new learner, the key is to:
+1. **Double-check event triggers** to make sure scripts start correctly.
+2. **Verify conditions and logical operators** to ensure they match intended behavior.
+3. **Ensure all variables and broadcasts are correctly initialized and triggered**.
+
+By systematically reviewing these aspects, you can identify and fix issues causing the test to fail[0].

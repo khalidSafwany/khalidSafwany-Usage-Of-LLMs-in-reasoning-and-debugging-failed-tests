@@ -1,0 +1,27 @@
+In your Scratch program, the test failed due to an incorrect expectation set in an assertion block. Let's break down the issue:
+
+1. **Understanding the Test Logic:**
+   - The code tests if the sprite, presumably a unicorn, says "Frohes neues Jahr!" (which means "Happy New Year!" in German).
+   - It then checks if the initial size of the sprite is less than a new value after some changes.
+
+2. **Primary Issue Encountered:**
+   - The test setup includes an assertion to check whether the sprite's saying text is "Frohes neues Jahr!". However, the value provided for comparison in the test was "ABC", causing the assertion to fail.
+   - Here is the specific code: `inputs.A` was `ABC` instead of the expected "Frohes neues Jahr!".
+
+3. **Steps to Fix the Issue:**
+   - Ensure that the expected value in the assertion matches the value the sprite is supposed to say. This entails changing `ABC` to "Frohes neues Jahr!" in the block where the assertion is made.
+
+4. **Additional Check on Size:**
+   - The next check involves comparing the initial size (`beginSize`) against the unicorn's size after the change. The check compares these sizes to confirm the size is incremented. Ensuring the `beginSize` and the relative increment calculations are consistent is crucial.
+
+Here is a simplified explanation:
+```
+The test in your Scratch project failed because it was checking if the sprite said "ABC" when it should have been checking for "Frohes neues Jahr!". Fixing this mismatch should resolve the test failure.
+```
+To correct this:
+
+1. Locate the block with the assertion checking the sprite's speech.
+2. Change the expected value from "ABC" to "Frohes neues Jahr!".
+3. Verify any size changes and ensure `beginSize` comparisons are correctly set.
+
+This adjustment should help pass the test. Let me know if you need a detailed walkthrough to correct this in your Scratch project!

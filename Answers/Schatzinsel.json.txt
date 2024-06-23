@@ -1,0 +1,24 @@
+The program's test likely failed due to the assertion conditions not being met. Let's break it down for a new Scratch learner:
+
+1. **Assert Condition Blocks**: The program uses special blocks to check if certain conditions are true. If any condition is false, the test will fail.
+
+2. **Example Usage**:
+    - The program has blocks such as `assertCondition` and `assertNumberCompare`. These blocks are used to check specific conditions and compare numbers.
+    - For example, `bbt_assertNumberCompare` might compare the size of a sprite to a specific value. If the size is not what was expected, this assertion will fail  .
+
+3. **Possible Reasons for Failure**:
+    - **Mismatch in Expected Values**: If the condition, like comparing the size of a sprite, does not match the expected value, the assertion will fail.
+    - **Incorrect Timing**: If the conditions are checked before the sprite has finished doing what it needs to do, such as changing size or position.
+    - **Visibility Issues**: Asserting if a sprite is visible or not could fail if the sprite's visibility does not match the expected condition when checked .
+
+For example, in the program snippet:
+```scratch
+bbt_assertNumberCompare
+{
+   inputs: {A: [size of sprite A], B: [expected size]},
+   comparator: LESS
+}
+```
+If the size of sprite A is not less than the expected size, the test will fail .
+
+In simple terms, the test fails because some parts of the program did not do what was expected when it was being tested, such as having the wrong size, being in the wrong position, or being visible when it should be hidden. Adjusting these parts to match expectations will help the test pass.

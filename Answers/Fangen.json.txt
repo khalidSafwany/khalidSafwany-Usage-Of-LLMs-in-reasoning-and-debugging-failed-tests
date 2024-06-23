@@ -1,0 +1,14 @@
+Here's a simple explanation for a new Scratch learner about why the tests in the Scratch program failed:
+
+1. **Increase Points Test**:
+   - **Intended Action**: The test seems to be checking if the points (Punktestand) increase correctly under specific conditions.
+   - **Why It Failed**: The test asserts that `beginPunkte` should be less than `Punktestand` after an action occurs. However, this condition was not met, meaning either the points did not increase as expected, or they didn't increase at all.
+   - **Fix**: Check the logic that increases the points and ensure it's implemented correctly. Ensure the conditions triggering the points increase are correct   .
+
+2. **Lose Lives Test**:
+   - **Intended Action**: The test checks if lives (Leben) decrease correctly when a sprite touches a red object.
+   - **Why It Failed**: It is looking for `Leben` to be less than 1 to stop the program. If the lives are not decreasing correctly, this condition won't be met.
+   - **Fix**: Verify that the logic for reducing lives on touching the red object is functioning as intended. Ensure the touching condition and lives decrement are properly coded   .
+
+### Summary:
+The tests failed because certain conditions expected by the tests (like increasing points or decreasing lives) were not met. To fix these issues, review the respective parts of your code where points are increased and where lives are decreased to ensure they work as expected under the intended conditions.
